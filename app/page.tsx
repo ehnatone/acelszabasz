@@ -1,3 +1,5 @@
+import ContactForm from "@/components/Contact/Contact";
+
 export default function Home() {
   return (
     <main className="min-h-screen font-[family-name:var(--font-geist-sans)] ">
@@ -7,7 +9,7 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
         <div className="hero-content">
-          <h1 className="m-4">Van egy elképzelésed? Én megvalósítom.</h1>
+          <h1 className="m-4">Van egy elképzelésed? Én megvalósítom!</h1>
           <p className="text-lg m-4">Acélból építek, bizalomból dolgozom.</p>
           <p className="text-lg m-4">
             Minőség, megbízhatóság és szakértelem egy helyen.
@@ -40,6 +42,8 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-bold text-red-700">Kapcsolat</h2>
           <p className="mt-4">Elérhetőségek és űrlap a kapcsolatfelvételhez.</p>
+
+          <ContactForm />
         </div>
       </section>
     </main>
