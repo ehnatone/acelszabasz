@@ -1,5 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        element: HTMLElement,
+        options: { sitekey: string; callback: (token: string) => void }
+      ) => void;
+    };
+  }
+}
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -8,6 +19,21 @@ export default function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState("");
+  const [token, setToken] = useState("");
+  const turnstileRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.document &&
+      turnstileRef.current
+    ) {
+      window.turnstile?.render(turnstileRef.current, {
+        sitekey: "0x4AAAAAAA8fVeyE1HXxgO_8",
+        callback: (token: string) => setToken(token),
+      });
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,7 +49,7 @@ export default function ContactForm() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, token }),
       });
 
       const result = await response.json();
@@ -43,6 +69,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto"
     >
+      <h2 className="text-2xl font-bold text-center mb-4">Kapcsolat</h2>
       {status && <p className="text-center mb-2 text-red-500">{status}</p>}
 
       <input
@@ -71,6 +98,10 @@ export default function ContactForm() {
         className="w-full p-2 border rounded mb-2"
         required
       ></textarea>
+
+      {/* Cloudflare Turnstile CAPTCHA */}
+      <div ref={turnstileRef} className="cf-turnstile"></div>
+
       <button
         type="submit"
         className="w-full bg-red-700 text-white p-2 rounded"

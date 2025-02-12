@@ -23,17 +23,17 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="#szolgaltatasok" className="hover:text-blue-300">
+            <Link href="szolgaltatasok" className="hover:text-blue-300">
               Szolgáltatások
             </Link>
           </li>
           <li>
-            <Link href="#galeria" className="hover:text-blue-300">
+            <Link href="galeria" className="hover:text-blue-300">
               Galéria
             </Link>
           </li>
           <li>
-            <Link href="#kapcsolat" className="hover:text-blue-300">
+            <Link href="kapcsolat" className="hover:text-blue-300">
               Kapcsolat
             </Link>
           </li>

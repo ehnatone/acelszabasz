@@ -42,6 +42,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@fortawesome/free-brands-svg-icons";
 config.autoAddCss = false;
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +52,11 @@ export default function RootLayout({
   return (
     <html lang="hu">
       <head>
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
