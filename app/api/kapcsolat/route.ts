@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+if (!RESEND_API_KEY) throw new Error("Missing Resend API Key!");
+
+const resend = new Resend(RESEND_API_KEY);
 const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET;
 
 async function verifyTurnstile(token: string): Promise<boolean> {
@@ -37,7 +40,6 @@ export async function POST(req: Request) {
         subject: `AcélSzabász.hu - Új ügyfél üzenet: ${name}`,
         text: `Email: ${email}\nÜzenet: ${message}`,
     });
-  
 
     if (emailResponse.error) throw new Error(emailResponse.error.message);
 
