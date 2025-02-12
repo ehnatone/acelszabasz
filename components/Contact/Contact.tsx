@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
+// Declare turnstile globally so TypeScript recognizes it
 declare global {
   interface Window {
     turnstile?: {
@@ -22,6 +23,9 @@ export default function ContactForm() {
   const [token, setToken] = useState("");
   const turnstileRef = useRef<HTMLDivElement>(null);
 
+  // Define the Turnstile site key explicitly as a string
+  const SITE_KEY = "0x4AAAAAAA8fVeyE1HXxgO_8"; // Replace with your actual key
+
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
@@ -29,7 +33,7 @@ export default function ContactForm() {
       turnstileRef.current
     ) {
       window.turnstile?.render(turnstileRef.current, {
-        sitekey: "0x4AAAAAAA8fVeyE1HXxgO_8",
+        sitekey: SITE_KEY,
         callback: (token: string) => setToken(token),
       });
     }
