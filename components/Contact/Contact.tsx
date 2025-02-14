@@ -17,6 +17,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    telefon: "",
     message: "",
   });
   const [status, setStatus] = useState("");
@@ -50,7 +51,7 @@ export default function ContactForm() {
     setStatus("Küldés...");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/kapcsolat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, token }),
@@ -59,7 +60,7 @@ export default function ContactForm() {
       const result = await response.json();
       if (response.ok) {
         setStatus("Sikeresen elküldve! ✅");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", telefon: "", message: "" });
       } else {
         setStatus(result.error || "Hiba történt.");
       }
@@ -71,11 +72,10 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white p-6 rounded-lg shadow-md max-w-lg mx-auto"
+      className="bg-white  rounded-lg shadow-md p-6 mx-auto"
     >
       <h2 className="text-2xl font-bold text-center mb-4">Kapcsolat</h2>
       {status && <p className="text-center mb-2 text-red-500">{status}</p>}
-
       <input
         type="text"
         name="name"
@@ -93,6 +93,15 @@ export default function ContactForm() {
         onChange={handleChange}
         className="w-full p-2 border rounded mb-2"
         required
+      />{" "}
+      <input
+        type="telefon"
+        name="telefon"
+        placeholder="Telefon"
+        value={formData.telefon}
+        onChange={handleChange}
+        className="w-full p-2 border rounded mb-2"
+        required
       />
       <textarea
         name="message"
@@ -102,10 +111,8 @@ export default function ContactForm() {
         className="w-full p-2 border rounded mb-2"
         required
       ></textarea>
-
       {/* Cloudflare Turnstile CAPTCHA */}
       <div ref={turnstileRef} className="cf-turnstile"></div>
-
       <button
         type="submit"
         className="w-full bg-red-700 text-white p-2 rounded"
