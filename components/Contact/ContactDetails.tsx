@@ -9,8 +9,6 @@ const ContactDetails = () => {
   return (
     <div className=" bg-white shadow-lg rounded-2xl p-6 mx-auto">
       <h2 className="text-xl font-bold mb-4">Elérhetőség</h2>
-      <div className="mt-4 h-96 rounded-lg overflow-hidden"></div>
-
       <div className="space-y-3">
         <div className="flex items-center space-x-3">
           <FaPhone className="w-5 h-5 text-slate-600" />
