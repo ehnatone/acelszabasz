@@ -22,6 +22,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 .hero {
   position: relative;

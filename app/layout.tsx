@@ -43,6 +43,7 @@ import "@fortawesome/free-brands-svg-icons";
 config.autoAddCss = false;
 
 import Script from "next/script";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -77,8 +78,12 @@ export default function RootLayout({
         {/* Footer */}
         <Footer>
           <p>
-            Minden jog fenntartva. Az oldal használatával automatikusan
-            elfogadja a használati feltételeket.
+            {
+              "Minden jog fenntartva. Az oldal használatával automatikusan elfogadja a "
+            }
+            <Link className="hover:underline" href="feltetelek">
+              használati feltételeket.
+            </Link>
           </p>
         </Footer>
       </body>

@@ -13,8 +13,8 @@ const Footer = ({ children }: FooterProps) => {
       <div className="flex gap-2">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="/jogi-nyilatkozat"
-          target="_blank"
+          href="jogi-nyilatkozat"
+          // target="_blank"
           rel="noopener noreferrer"
         >
           <Image
