@@ -11,8 +11,7 @@ export default function Contact(): JSX.Element {
     >
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold text-red-700">Kapcsolat</h2>
-        <p className="mt-4">Elérhetőségek és űrlap a kapcsolatfelvételhez.</p>
-        <div className=" min-h-screen">
+        <div className="min-h-screen">
           <div className="mt-4 flex-grow">
             <ContactDetails />
           </div>

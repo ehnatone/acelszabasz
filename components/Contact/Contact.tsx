@@ -28,11 +28,14 @@ export default function ContactForm() {
   const SITE_KEY = "0x4AAAAAAA8fVeyE1HXxgO_8"; // Replace with your actual key
 
   useEffect(() => {
+    console.log("useeffect ran");
     if (
       typeof window !== "undefined" &&
       window.document &&
       turnstileRef.current
     ) {
+      console.log("rendering turnstile");
+      console.log("window.turnstile", window.turnstile);
       window.turnstile?.render(turnstileRef.current, {
         sitekey: SITE_KEY,
         callback: (token: string) => setToken(token),
@@ -112,7 +115,11 @@ export default function ContactForm() {
         required
       ></textarea>
       {/* Cloudflare Turnstile CAPTCHA */}
-      <div ref={turnstileRef} className="cf-turnstile"></div>
+      <div
+        ref={turnstileRef}
+        className="cf-turnstile"
+        data-sitekey={SITE_KEY}
+      ></div>
       <button
         type="submit"
         className="w-full bg-red-700 text-white p-2 rounded"
