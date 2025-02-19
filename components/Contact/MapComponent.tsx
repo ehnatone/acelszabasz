@@ -1,5 +1,3 @@
-"use client";
-
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 interface MapProps {
@@ -8,9 +6,8 @@ interface MapProps {
 }
 
 const MapComponent: React.FC<MapProps> = ({ center, zoom }) => {
-  console.log(process.env.GOOGLE_MAPS_API_KEY as string);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
   });
 
   if (!isLoaded) return <div>Loading Map...</div>;
