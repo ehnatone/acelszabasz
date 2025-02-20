@@ -1,47 +1,26 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 
-// Declare turnstile globally so TypeScript recognizes it
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (
-        element: HTMLElement,
-        options: { sitekey: string; callback: (token: string) => void }
-      ) => void;
-    };
-  }
-}
+import { useRef, useState } from "react";
+import { Turnstile } from "next-turnstile";
 
 export default function ContactForm() {
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    "success" | "error" | "expired" | "required"
+  >("required");
+  const [error, setError] = useState<string | null>(null);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     telefon: "",
     message: "",
+    token: "",
   });
   const [status, setStatus] = useState("");
-  const [token, setToken] = useState("");
-  const turnstileRef = useRef<HTMLDivElement>(null);
-
-  // Define the Turnstile site key explicitly as a string
-  const SITE_KEY = "0x4AAAAAAA8fVeyE1HXxgO_8"; // Replace with your actual key
-
-  useEffect(() => {
-    console.log("useeffect ran");
-    if (
-      typeof window !== "undefined" &&
-      window.document &&
-      turnstileRef.current
-    ) {
-      console.log("rendering turnstile");
-      console.log("window.turnstile", window.turnstile);
-      window.turnstile?.render(turnstileRef.current, {
-        sitekey: SITE_KEY,
-        callback: (token: string) => setToken(token),
-      });
-    }
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -51,29 +30,60 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     setStatus("Küldés...");
+
+    if (!formRef.current) {
+      setIsLoading(false);
+      return;
+    }
+
+    const formDataFinal = new FormData(formRef.current);
+    const token = formDataFinal.get("cf-turnstile-response");
+    const email = formDataFinal.get("email");
+    const name = formDataFinal.get("name");
+    const telefon = formDataFinal.get("telefon");
+    const message = formDataFinal.get("message");
 
     try {
       const response = await fetch("/api/kapcsolat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, token }),
+        body: JSON.stringify({ email, name, telefon, message, token }),
       });
-
       const result = await response.json();
+      setIsLoading(false);
       if (response.ok) {
-        setStatus("Sikeresen elküldve! ✅");
-        setFormData({ name: "", email: "", telefon: "", message: "" });
+        setStatus("Üzenet sikeresen elküldve! ✅");
+        setFormData({
+          name: "",
+          email: "",
+          telefon: "",
+          message: "",
+          token: "",
+        });
+        if (window.turnstile && typeof window.turnstile.reset == "function") {
+          window.turnstile.reset("#turnstile-widget");
+        }
       } else {
-        setStatus(result.error || "Hiba történt.");
+        setStatus(
+          result.error ||
+            "Hiba történt. Kérlek frissítd az oldalt és próbáld újra."
+        );
       }
-    } catch {
-      setStatus("Hiba történt.");
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setStatus("Hiba történt. Kérlek frissítd az oldalt és próbáld újra.");
+      setIsLoading(false);
+      if (window.turnstile && typeof window.turnstile.reset == "function") {
+        window.turnstile.reset("#turnstile-widget");
+      }
     }
   };
 
   return (
     <form
+      ref={formRef}
       onSubmit={handleSubmit}
       className="bg-white  rounded-lg shadow-md p-6 mx-auto"
     >
@@ -115,13 +125,36 @@ export default function ContactForm() {
         required
       ></textarea>
       {/* Cloudflare Turnstile CAPTCHA */}
-      <div
-        ref={turnstileRef}
-        className="cf-turnstile"
-        data-sitekey={SITE_KEY}
-      ></div>
+      <Turnstile
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+        retry="auto"
+        refreshExpired="auto"
+        onError={() => {
+          setTurnstileStatus("error");
+          setError("Security check failed. Please try again.");
+          console.log(turnstileStatus + "#" + error);
+        }}
+        onExpire={() => {
+          setTurnstileStatus("expired");
+          setError("Security check expired. Please verify again.");
+          console.log(turnstileStatus + "#" + error);
+        }}
+        onLoad={() => {
+          setTurnstileStatus("required");
+          setError(null);
+          console.log(turnstileStatus + "#" + error);
+        }}
+        onVerify={
+          (/*token*/) => {
+            setTurnstileStatus("success");
+            console.log(turnstileStatus + "#" + error);
+            setError(null);
+          }
+        }
+      />
       <button
         type="submit"
+        disabled={isLoading}
         className="w-full bg-red-700 text-white p-2 rounded"
       >
         Küldés
