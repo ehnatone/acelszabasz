@@ -23,9 +23,9 @@ async function verifyTurnstile(token: string): Promise<boolean> {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message, token } = await req.json();
+    const { name, email, telefon, message,  token } = await req.json();
 
-    if (!name || !email || !message || !token) {
+    if (!name || !(email || telefon) || !message || !token) {
       return NextResponse.json({ error: "Minden mezőt ki kell tölteni!" }, { status: 400 });
     }
 
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
         from: "noreply@mail.acelszabasz.hu", // Must match your verified Resend domain
         to: ["info@acelszabasz.hu"], // Replace with your email
         subject: `AcélSzabász.hu - Új ügyfél üzenet: ${name}`,
-        text: `Email: ${email}\nÜzenet: ${message}`,
+        text: `Ügyfél Név: ${name}\nÜgyfél Email: ${email}\nÜgyfél Telefonszám: ${telefon}\n\nÜzenet: ${message}`,
     });
 
     if (emailResponse.error) throw new Error(emailResponse.error.message);

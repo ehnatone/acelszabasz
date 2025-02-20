@@ -92,33 +92,33 @@ export default function ContactForm() {
       <input
         type="text"
         name="name"
-        placeholder="Név"
+        placeholder="Név - Kötelező"
         value={formData.name}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-2"
         required
       />
       <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        className="w-full p-2 border rounded mb-2"
-        required
-      />{" "}
-      <input
-        type="telefon"
+        type="tel"
         name="telefon"
-        placeholder="Telefon"
+        placeholder="Telefon - Kötelező, ha nincs email"
         value={formData.telefon}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-2"
-        required
+        required={!formData.email}
       />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email - Kötelező, ha nincs telefonszám"
+        value={formData.email}
+        onChange={handleChange}
+        className="w-full p-2 border rounded mb-2"
+        required={!formData.telefon}
+      />{" "}
       <textarea
         name="message"
-        placeholder="Üzenet"
+        placeholder="Üzenet - Kötelező"
         value={formData.message}
         onChange={handleChange}
         className="w-full p-2 border rounded mb-2"
