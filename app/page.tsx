@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <Fragment>
       <div className="snap-always snap-center">
-        <section className="hero bg-black min-h-[calc(100vh-8rem)]">
-          <video autoPlay loop muted className="h-[calc(100vh-8rem)]">
+        <section className="hero bg-black min-h-[calc(100vh-4rem)]">
+          <video autoPlay loop muted className="h-[calc(100vh-4rem)]">
             <source src="hero-bg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
