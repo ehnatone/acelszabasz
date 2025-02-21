@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer = ({ children }: FooterProps) => {
   return (
-    <footer className="flex fixed bottom-0 w-full flex-col gap-4 items-center justify-center py-4 text-sm text-center text-gray-500 dark:text-gray-400 bg-slate-200">
+    <footer className="flex w-full flex-col gap-4 items-center justify-center py-4 text-sm text-center text-gray-500 dark:text-gray-400 bg-slate-200">
       <div className="flex gap-2">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"

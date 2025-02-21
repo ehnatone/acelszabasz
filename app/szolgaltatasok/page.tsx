@@ -41,9 +41,12 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <section className="min-h-screen bg-gray-100 py-16">
-      <div className="container mx-auto text-center">
-        <h2 className="text-4xl font-bold text-red-700 mb-10">
+    <section
+      id="szolgaltatasok"
+      className="relative min-h-[calc(100vh-8rem)] flex items-center bg-gray-100"
+    >
+      <div className="container max-h-[calc(100vh-8rem)]  overflow-y-auto scroll-smooth mx-auto text-center">
+        <h2 className="text-4xl font-bold text-red-700 py-10">
           Szolgáltatások
         </h2>
         <p className="text-lg text-gray-700 mb-10">
@@ -51,7 +54,7 @@ export default function ServicesPage() {
         </p>
 
         {/* Service Grid */}
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 px-4">
+        <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 px-4">
           {services.map((service, index) => (
             <div
               key={index}

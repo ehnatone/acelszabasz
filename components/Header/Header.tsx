@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="bg-red-700 text-white fixed w-full drop-shadow-[0_10px_10px_rgba(0,0,0,0.25)] z-50">
+    <header className="bg-red-700 text-white h-32 fixed w-full drop-shadow-[0_10px_10px_rgba(0,0,0,0.25)] z-50">
       <nav className="container mx-auto flex justify-between items-center p-4">
         <Link href="/">
           <h1 className="text-2xl font-bold sr-only">Acélszabász.Hu</h1>
