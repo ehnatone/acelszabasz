@@ -75,20 +75,6 @@ export default function Gallery({ images }: GalleryProps) {
       {/* Lightbox Popup */}
       {lightboxIndex !== null && (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <button
-            className="absolute top-4 right-4 text-white text-3xl"
-            onClick={() => setLightboxIndex(null)}
-          >
-            ✕
-          </button>
-
-          <button
-            className="absolute left-5 text-white text-4xl bg-gray-800 px-3 py-2 rounded-full"
-            onClick={prevImage}
-          >
-            ◀
-          </button>
-
           <div className="relative max-w-3xl p-4">
             <Image
               src={images[lightboxIndex]}
@@ -98,9 +84,21 @@ export default function Gallery({ images }: GalleryProps) {
               className="w-full h-auto rounded-lg"
             />
           </div>
+          <button
+            className="absolute top-4 right-4 text-white text-3xl z-50"
+            onClick={() => setLightboxIndex(null)}
+          >
+            ✕
+          </button>
 
           <button
-            className="absolute right-5 text-white text-4xl bg-gray-800 px-3 py-2 rounded-full"
+            className="absolute left-5 text-white text-4xl bg-gray-800 px-3 py-2 rounded-full z-50"
+            onClick={prevImage}
+          >
+            ◀
+          </button>
+          <button
+            className="absolute right-5 text-white text-4xl bg-gray-800 px-3 py-2 rounded-full z-50"
             onClick={nextImage}
           >
             ▶
