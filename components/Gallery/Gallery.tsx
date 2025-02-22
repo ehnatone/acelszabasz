@@ -64,7 +64,7 @@ export default function Gallery({ images }: GalleryProps) {
           ))}
         </div>
         <button
-          className="absolute bottom-0 right-auto my-2 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 mb-10"
+          className="absolute bottom-0 my-2 right-[calc(50vw-4.5rem)] px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 w-36 mb-10"
           onClick={!loaded ? loadMore : () => setShownCount(8)}
         >
           {!loaded ? "Mutass még" : "Elrejtés"}

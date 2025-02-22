@@ -12,7 +12,7 @@ export default function GalleryPage() {
       id="galeria"
       className="relative min-h-[calc(100vh-6rem)] flex items-center bg-gray-100"
     >
-      <div className="container max-h-[calc(100vh-6rem)] mx-auto text-center overflow-y-auto scroll-smooth">
+      <div className="container max-h-[calc(100vh-6rem)] mx-auto text-center">
         <h2 className="text-4xl font-bold text-red-700 py-10">Galéria</h2>
 
         <Gallery images={images} />
