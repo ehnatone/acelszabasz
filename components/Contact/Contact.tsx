@@ -155,7 +155,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-red-700 text-white p-2 rounded"
+        className="w-full bg-red-700 text-white p-2 rounded mb-10"
       >
         Küldés
       </button>
