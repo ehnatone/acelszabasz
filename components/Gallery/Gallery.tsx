@@ -66,7 +66,7 @@ export default function Gallery({ images }: GalleryProps) {
       {/* Load More Button */}
 
       <button
-        className="my-2 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300"
+        className="my-2 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 mb-10"
         onClick={!loaded ? loadMore : () => setShownCount(8)}
       >
         {!loaded ? "Mutass még" : "Elrejtés"}
