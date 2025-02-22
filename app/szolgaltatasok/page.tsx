@@ -23,19 +23,19 @@ const services = [
     title: "Korlátok",
     description:
       "A korlátok egyik legfontosabb funkciója a biztonság, de emellett meghatározó dizájnelemei is lehetnek egy épületnek. Egyedi fémszerkezetű acél vagy kovácsoltvas korlátok gyártását és telepítését is vállaljuk. Legyen szó beltéri vagy kültéri megoldásokról, minden esetben figyelünk a precíz kivitelezésre, az időjárásállóságra és az esztétikai megjelenésre. Egyedi tervezésünknek köszönhetően modern vagy klasszikus stílusban is elkészítjük a korlátokat, így azok tökéletesen illeszkednek a lépcsőhöz, erkélyhez vagy teraszhoz.",
-    image: "/3.jpg",
+    image: "/4.jpg",
   },
   {
     title: "Tárolók és Garázsok",
     description:
       "A tárolók, garázsok és kennelek nemcsak praktikus megoldást nyújtanak, hanem esztétikailag is hozzájárulhatnak otthonunk vagy vállalkozásunk rendezett megjelenéséhez. Egyedi igényekre szabott fém és acélszerkezetű tárolók, garázsok és kennelek gyártásával és telepítésével is foglalkozunk. Legyen szó egy kisállat kényelmes és biztonságos elhelyezéséről, járművének védelméről vagy kerti szerszámainak rendszerezett tárolásáról, mi időtálló és esztétikus megoldásokat kínálunk. A precíz kivitelezés és a tartós anyagok garantálják, hogy termékeink hosszú távon megbízhatóan szolgálják Önt. Egyedi tervezésünknek köszönhetően modern és klasszikus stílusban is elkészítjük a szerkezeteket, hogy tökéletesen illeszkedjenek környezetükbe.",
-    image: "/4.jpg",
+    image: "/5.jpg",
   },
   {
     title: "Egyéb egyedi acél szerkezetek",
     description:
       "Vállalkozásunk egyedi méretre gyártott acélszerkezetek gyártásával és telepítésével is foglalkozik, igazodva az Ön igényeihez és a környezet adottságaihoz. Legyen szó terasz- és előtetőkről, vagy árnyékolókról és pergolákról, valamint eljesen egyéb egyedi szerkezetek kivitelezését is vállaljuk. Ezen kívül egyéb szerkezeteket, állványokat, tartókat is el tudunk készíteni. ",
-    image: "/5.jpg",
+    image: "/6.jpg",
   },
 ];
 
