@@ -30,7 +30,16 @@ export default function Gallery({ images }: GalleryProps) {
   const [loaded, setLoaded] = useState(false);
 
   const loadMore = () => {
+    /*stop event propagation to below*/
     setShownCount(shownCount + 16);
+  };
+
+  const handleShowMoreClick = () => {
+    if (!loaded) {
+      loadMore();
+    } else {
+      setShownCount(8);
+    }
   };
 
   useEffect(() => {
@@ -47,28 +56,41 @@ export default function Gallery({ images }: GalleryProps) {
       {/* Image Grid */}
       <div className="max-h-[calc(100vh-14rem)] overflow-y-auto scroll-smooth">
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 px-4 ">
-          {visibleImages.map((src, index) => (
-            <div
-              key={index}
-              className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg hover:scale-105 transition duration-300"
-              onClick={() => setLightboxIndex(index)}
-            >
-              <Image
-                src={src}
-                alt={`Gallery image ${index + 1}`}
-                width={360}
-                height={270}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          {
+            /*sorted by filename then map */
+            visibleImages
+              .sort(
+                (a, b) =>
+                  parseInt(a.split("/").pop()!) - parseInt(b.split("/").pop()!)
+              )
+              .map((src, index) => (
+                <div
+                  key={index}
+                  className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg hover:scale-105 transition duration-300"
+                  onClick={() => setLightboxIndex(index)}
+                >
+                  <Image
+                    src={src}
+                    alt={`Gallery image ${index + 1}`}
+                    width={360}
+                    height={270}
+                    className="w-full h-full object-cover"
+                  />
+                  {
+                    /*if last image index then add button*/
+                    index === visibleImages.length - 1 && (
+                      <button
+                        className="absolute bottom-0 my-2 right-[calc(50%-4.5rem)] px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 w-36 mb-10"
+                        onClick={handleShowMoreClick}
+                      >
+                        {!loaded ? "Mutass még" : "Elrejtés"}
+                      </button>
+                    )
+                  }
+                </div>
+              ))
+          }
         </div>
-        <button
-          className="absolute bottom-0 my-2 right-[calc(50vw-4.5rem)] px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 w-36 mb-10"
-          onClick={!loaded ? loadMore : () => setShownCount(8)}
-        >
-          {!loaded ? "Mutass még" : "Elrejtés"}
-        </button>
       </div>
 
       {/* Load More Button */}
