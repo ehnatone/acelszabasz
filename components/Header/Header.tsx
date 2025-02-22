@@ -20,7 +20,9 @@ const Header = () => {
               className="h-16 w-auto"
             />
           </Link>
-          <h1 className="text-xl font-bold lg:block">Acélszabász.Hu</h1>
+          <h1 className="text-lg md:text-xl font-bold lg:block">
+            Acélszabász.Hu
+          </h1>
         </div>
 
         {/* Navigation Items */}

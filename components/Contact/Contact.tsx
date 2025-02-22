@@ -85,7 +85,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="bg-white  rounded-lg shadow-md p-6 mx-auto"
+      className="bg-white  shadow-md p-6 mx-auto"
     >
       <h2 className="text-2xl font-bold text-center mb-4">Kapcsolat</h2>
       {status && <p className="text-center mb-2 text-red-500">{status}</p>}

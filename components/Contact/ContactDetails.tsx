@@ -7,7 +7,7 @@ import MapComponent from "./MapComponent";
 const ContactDetails = () => {
   const position = { lat: 47.31257, lng: 18.412163 }; //47.312570/18.412163
   return (
-    <div className=" bg-white shadow-lg rounded-2xl p-6 mx-auto">
+    <div className=" bg-white shadow-lg p-6 mx-auto">
       <h2 className="text-xl font-bold mb-4">Elérhetőség</h2>
       <div className="space-y-3">
         <div className="flex items-center space-x-3">
