@@ -68,6 +68,11 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-black opacity-80"></div>
           {children}
         </main>
+        <div className="absolute bottom-0 left-10">
+          {
+            //react icon for chat
+          }
+        </div>
       </body>
     </html>
   );

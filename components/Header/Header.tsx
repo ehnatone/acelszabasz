@@ -65,11 +65,11 @@ const Header = () => {
           <ul className="flex flex-col space-y-4 p-4">
             <li>
               <Link
-                href="/rolunk"
+                href="/rolam"
                 className="block"
                 onClick={() => setIsOpen(false)}
               >
-                Rólunk
+                Rólam
               </Link>
             </li>
             <li>
