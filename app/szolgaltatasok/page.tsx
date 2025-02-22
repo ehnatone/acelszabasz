@@ -4,19 +4,19 @@ const services = [
   {
     title: "Úszókapuk",
     description:
-      "Úszókapuink modern és praktikus megoldást kínálnak minden olyan ingatlan számára, ahol a helytakarékosság és a könnyű kezelhetőség kiemelt szempont. Az úszókapuk fő előnye, hogy nem igényelnek sínrendszert a talajon, így problémamentesen működnek egyenetlen vagy havas felületeken is. Cégünk kizárólag minőségi alapanyagokat és precíz technológiát alkalmaz a kapuk gyártása és szerelése során, hogy ügyfeleink hosszú távon megbízható, esztétikus és könnyen karbantartható kaput kapjanak. Egyedi igények szerint méretre gyártunk úszókapukat, amelyek modern vagy klasszikus kialakítással is rendelhetők.",
+      "Úszókapuim modern és praktikus megoldást kínálnak, különösen ott, ahol a helytakarékosság és a könnyű kezelhetőség fontos. Mivel nem igényelnek talajsínt, egyenetlen vagy havas felületeken is problémamentesen működnek. Minőségi alapanyagokkal és precíz technológiával dolgozom, hogy a kapuk tartósak, esztétikusak és könnyen karbantarthatók legyenek. Egyedi méretben, modern vagy klasszikus kialakítással készítem őket, igazodva az ügyfelek igényeihez.",
     image: "/1.jpg",
   },
   {
     title: "Kerítések",
     description:
-      "Egy jól megtervezett és kivitelezett kerítés nemcsak biztonságot nyújt, hanem esztétikai szempontból is meghatározó eleme egy ingatlannak. Különféle típusú kerítések gyártását és telepítését vállaljuk, legyen szó kovácsoltvas, modern fém vagy kombinált fa-fém szerkezetekről. Kiemelten figyelünk arra, hogy az általunk készített kerítések időtállóak, időjárásállóak és minimális karbantartást igénylő megoldások legyenek. Személyre szabott terveinknek köszönhetően minden ügyfelünk olyan kerítést kaphat, amely tökéletesen illeszkedik ingatlanához és egyedi elképzeléseihez.",
+      "Egy jól megtervezett kerítés nemcsak biztonságot nyújt, hanem az ingatlan megjelenését is meghatározza. Különféle kerítések gyártását és telepítését vállalom, legyen szó kovácsoltvas, modern fém vagy fa-fém kombinációkról. Fontos számomra, hogy a kerítések időtállóak, időjárásállóak és minimális karbantartást igényeljenek. Személyre szabott tervezéssel biztosítom, hogy tökéletesen illeszkedjenek az ingatlanhoz és az egyedi igényekhez.",
     image: "/2.jpg",
   },
   {
     title: "Lépcsők",
     description:
-      "A lépcsők nem csupán funkcionális szerkezetek, hanem esztétikai szempontból is meghatározó elemei egy épületnek. Beltéri és kültéri lépcsők gyártását egyaránt vállaljuk. Az ügyfél igényei alapján modern, letisztult vagy akár díszes kivitelű lépcsőket is készítünk, amelyek strapabíróak, biztonságosak és esztétikusak. Különös figyelmet fordítunk a pontos méretezésre és hogy a lépcső kényelmes és stabil használatot biztosítson hosszú éveken át.",
+      "A lépcsők nemcsak funkcionálisak, hanem az épület stílusát is meghatározzák. Beltéri és kültéri lépcsők gyártását vállalom, az ügyfél igényeihez igazodva. Legyen szó modern, letisztult vagy díszes kivitelről, a lépcsők strapabíróak, biztonságosak és esztétikusak. Kiemelt figyelmet fordítok a pontos méretezésre és a kényelmes, stabil használatra, hogy hosszú éveken át megbízhatóan szolgáljanak.",
     image: "/3.jpg",
   },
   {
@@ -28,13 +28,13 @@ const services = [
   {
     title: "Tárolók és Garázsok",
     description:
-      "A tárolók, garázsok és kennelek nemcsak praktikus megoldást nyújtanak, hanem esztétikailag is hozzájárulhatnak otthonunk vagy vállalkozásunk rendezett megjelenéséhez. Egyedi igényekre szabott fém és acélszerkezetű tárolók, garázsok és kennelek gyártásával és telepítésével is foglalkozunk. Legyen szó egy kisállat kényelmes és biztonságos elhelyezéséről, járművének védelméről vagy kerti szerszámainak rendszerezett tárolásáról, mi időtálló és esztétikus megoldásokat kínálunk. A precíz kivitelezés és a tartós anyagok garantálják, hogy termékeink hosszú távon megbízhatóan szolgálják Önt. Egyedi tervezésünknek köszönhetően modern és klasszikus stílusban is elkészítjük a szerkezeteket, hogy tökéletesen illeszkedjenek környezetükbe.",
+      "Tárolók, garázsok és kennelek gyártásával és telepítésével foglalkozom, egyedi igényekre szabva. Legyen szó kisállata biztonságos elhelyezéséről, járműve védelméről vagy kerti szerszámok tárolásáról, tartós és esztétikus megoldásokat kínálok. Precíz kivitelezéssel és minőségi anyagokkal dolgozom, biztosítva a hosszú távú megbízhatóságot.",
     image: "/5.jpg",
   },
   {
     title: "Egyéb egyedi acél szerkezetek",
     description:
-      "Vállalkozásunk egyedi méretre gyártott acélszerkezetek gyártásával és telepítésével is foglalkozik, igazodva az Ön igényeihez és a környezet adottságaihoz. Legyen szó terasz- és előtetőkről, vagy árnyékolókról és pergolákról, valamint eljesen egyéb egyedi szerkezetek kivitelezését is vállaljuk. Ezen kívül egyéb szerkezeteket, állványokat, tartókat is el tudunk készíteni. ",
+      "Vállalkozásom egyedi méretre gyártott acélszerkezetek gyártásával és telepítésével foglalkozik, teljes mértékben igazodva az Ön igényeihez és a környezet adottságaihoz. Legyen szó terasz- és előtetőkről, árnyékolókról, pergolákról vagy bármilyen egyedi szerkezetről, vállalom a kivitelezést. Emellett különféle szerkezetek, állványok és tartók készítését is el tudom végezni.",
     image: "/6.jpg",
   },
 ];
