@@ -53,7 +53,7 @@ export default function RootLayout({
       >
         {/* Navigation Bar */}
         <Header></Header>
-        <main className="font-[family-name:var(--font-geist-sans)] snap-y mt-24 snap-mandatory overflow-y-scroll  h-[calc(100vh-4rem)]">
+        <main className="font-[family-name:var(--font-geist-sans)] snap-y mt-24 snap-mandatory overflow-y-scroll  h-[calc(100vh-6rem)]">
           {/* Page Content */}
           <Image
             src="/bg-1.jpg" // Replace with your image path

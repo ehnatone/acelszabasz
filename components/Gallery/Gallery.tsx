@@ -55,8 +55,8 @@ export default function Gallery({ images }: GalleryProps) {
             <Image
               src={src}
               alt={`Gallery image ${index + 1}`}
-              width={400}
-              height={300}
+              width={360}
+              height={270}
               className="w-full h-full object-cover"
             />
           </div>
@@ -66,7 +66,7 @@ export default function Gallery({ images }: GalleryProps) {
       {/* Load More Button */}
 
       <button
-        className="mt-6 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300"
+        className="my-2 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300"
         onClick={!loaded ? loadMore : () => setShownCount(8)}
       >
         {!loaded ? "Mutass még" : "Elrejtés"}

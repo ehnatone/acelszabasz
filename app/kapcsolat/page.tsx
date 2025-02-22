@@ -7,18 +7,11 @@ export default function Contact(): JSX.Element {
   return (
     <section
       id="kapcsolat"
-      className="relative min-h-[calc(100vh-4rem)] flex items-center "
+      className="relative min-h-[calc(100vh-6rem)] flex items-center bg-gray-100"
     >
-      <div className="container max-h-[calc(100vh-4rem)] mx-auto overflow-y-auto scroll-smooth text-center">
-        <h2 className="text-3xl font-bold text-red-700">Kapcsolat</h2>
-        <div className="min-h-screen">
-          <div className="mt-4 flex-grow">
-            <ContactDetails />
-          </div>
-          <div className="mt-4">
-            <ContactForm />
-          </div>
-        </div>
+      <div className="container mx-auto text-center">
+        <ContactDetails />
+        <ContactForm />
       </div>
     </section>
   );
