@@ -45,32 +45,33 @@ export default function Gallery({ images }: GalleryProps) {
   return (
     <Fragment>
       {/* Image Grid */}
-      <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 px-4">
-        {visibleImages.map((src, index) => (
-          <div
-            key={index}
-            className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg hover:scale-105 transition duration-300"
-            onClick={() => setLightboxIndex(index)}
-          >
-            <Image
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              width={360}
-              height={270}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
+      <div className="max-h-[calc(100vh-14rem)] overflow-y-auto scroll-smooth">
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 px-4 ">
+          {visibleImages.map((src, index) => (
+            <div
+              key={index}
+              className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg hover:scale-105 transition duration-300"
+              onClick={() => setLightboxIndex(index)}
+            >
+              <Image
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                width={360}
+                height={270}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+        <button
+          className="absolute bottom-0 right-auto my-2 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 mb-10"
+          onClick={!loaded ? loadMore : () => setShownCount(8)}
+        >
+          {!loaded ? "Mutass még" : "Elrejtés"}
+        </button>
       </div>
 
       {/* Load More Button */}
-
-      <button
-        className="my-2 px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 mb-10"
-        onClick={!loaded ? loadMore : () => setShownCount(8)}
-      >
-        {!loaded ? "Mutass még" : "Elrejtés"}
-      </button>
 
       {/* Lightbox Popup */}
       {lightboxIndex !== null && (
