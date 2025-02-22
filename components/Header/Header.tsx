@@ -28,8 +28,8 @@ const Header = () => {
         {/* Navigation Items */}
         <ul className="hidden md:flex space-x-6">
           <li>
-            <Link href="/rolunk" className="hover:text-blue-300">
-              Rólunk
+            <Link href="/rolam" className="hover:text-blue-300">
+              Rólam
             </Link>
           </li>
           <li>
