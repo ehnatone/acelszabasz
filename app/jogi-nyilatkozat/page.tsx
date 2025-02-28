@@ -12,7 +12,7 @@ export default function LegalNoticePage(): JSX.Element {
 
           {/* Content */}
 
-          <div className="relative z-10 container mx-auto p-8 text-white text-center bg-transparent bg-slate-500">
+          <div className="container mx-auto p-8 text-white text-center bg-transparent bg-slate-500">
             <h2 className="text-4xl font-bold py-4 md:py-7 lg:py-10">
               Jogi Nyilatkozat
             </h2>
