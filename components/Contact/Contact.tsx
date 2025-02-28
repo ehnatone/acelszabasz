@@ -3,7 +3,11 @@
 import { useRef, useState } from "react";
 import { Turnstile } from "next-turnstile";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  onClose?: () => void;
+}
+
+export default function ContactForm({ onClose }: ContactFormProps) {
   const [turnstileStatus, setTurnstileStatus] = useState<
     "success" | "error" | "expired" | "required"
   >("required");
@@ -85,9 +89,20 @@ export default function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="bg-white  shadow-md p-6 mx-auto"
+      className="bg-white  shadow-md p-6 mx-auto max-w-calc[100wv-2rem]"
     >
-      <h2 className="text-2xl font-bold text-center mb-4">Kapcsolat</h2>
+      <div className={"flex justify-between text-gray-600 items-center mb-4 "}>
+        <h2 className="text-2xl  font-bold flex-grow text-center">Kapcsolat</h2>
+        {onClose && (
+          <button
+            className=" hover:text-gray-900 font-bold text-2xl"
+            onClick={onClose}
+            type="button"
+          >
+            ✕
+          </button>
+        )}
+      </div>
       {status && <p className="text-center mb-2 text-red-500">{status}</p>}
       <input
         type="text"

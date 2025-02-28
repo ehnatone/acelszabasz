@@ -52,3 +52,14 @@ html {
   font-weight: bold;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
+.nav {
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

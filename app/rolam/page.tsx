@@ -12,7 +12,7 @@ export default function AboutPage(): JSX.Element {
 
           {/* Content */}
 
-          <div className="relative z-10 container mx-auto p-8 text-white text-center bg-transparent bg-slate-500">
+          <div className=" container mx-auto p-8 text-white text-center bg-transparent bg-slate-500">
             <h2 className="text-4xl font-bold py-4 md:py-7 lg:py-10">Rólam</h2>
             <p className="lg:text-lg text-md mb-4">
               Vállalkozásom több mint 10 éve foglalkozik úszókapuk, kerítések,

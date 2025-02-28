@@ -29,7 +29,7 @@ export default function Home() {
           {
             "Minden jog fenntartva. Az oldal használatával automatikusan elfogadja a "
           }
-          <Link className="hover:underline" href="feltetelek">
+          <Link className="hover:underline" href="/jogi-nyilatkozat">
             használati feltételeket.
           </Link>
         </p>

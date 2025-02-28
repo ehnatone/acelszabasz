@@ -8,25 +8,26 @@ const Header = () => {
 
   return (
     <header className="bg-red-700 text-white fixed w-full h-24 drop-shadow-lg z-50">
-      <nav className="container mx-auto flex items-center justify-between p-4">
+      <nav className="container mx-auto flex justify-between h-24 px-4">
         {/* Logo and Title */}
-        <div className="flex items-center gap-4">
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width="128"
-              height="64"
-              className="h-16 w-auto"
-            />
-          </Link>
-          <h1 className="text-lg md:text-xl font-bold lg:block">
+
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width="192"
+            height="128"
+            className="h-32 w-48 z-50"
+          />
+        </Link>
+
+        <div className="flex items-center">
+          <h1 className="hidden sm:flex space-x-6 text-lg md:text-xl  font-bold ">
             Acélszabász.Hu
           </h1>
         </div>
-
         {/* Navigation Items */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex items-center space-x-6 px-4">
           <li>
             <Link href="/rolam" className="hover:text-blue-300">
               Rólam
@@ -61,39 +62,39 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-24 left-0 w-full bg-red-800 text-white md:hidden">
-          <ul className="flex flex-col space-y-4 p-4">
-            <li>
+        <div className="nav absolute top-24 left-0 w-full bg-red-700 text-white md:hidden z-10  flex flex-col">
+          <ul className="flex flex-grow flex-col">
+            <li className="border-b border-white hover:bg-red-900">
               <Link
                 href="/rolam"
-                className="block"
+                className="block text-center py-6"
                 onClick={() => setIsOpen(false)}
               >
                 Rólam
               </Link>
             </li>
-            <li>
+            <li className="border-b border-white hover:bg-red-900">
               <Link
                 href="/szolgaltatasok"
-                className="block"
+                className="block text-center py-6"
                 onClick={() => setIsOpen(false)}
               >
                 Szolgáltatások
               </Link>
             </li>
-            <li>
+            <li className="border-b border-white hover:bg-red-900">
               <Link
                 href="/galeria"
-                className="block"
+                className="block text-center py-6"
                 onClick={() => setIsOpen(false)}
               >
                 Galéria
               </Link>
             </li>
-            <li>
+            <li className="hover:bg-red-900">
               <Link
                 href="/kapcsolat"
-                className="block"
+                className="block text-center py-6"
                 onClick={() => setIsOpen(false)}
               >
                 Kapcsolat
