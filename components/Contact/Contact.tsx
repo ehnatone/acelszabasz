@@ -89,7 +89,7 @@ export default function ContactForm({ onClose }: ContactFormProps) {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="bg-white  shadow-md p-6 mx-auto max-w-calc[100wv-2rem]"
+      className="bg-white  shadow-md p-6 mx-auto"
     >
       <div className={"flex justify-between text-gray-600 items-center mb-4 "}>
         <h2 className="text-2xl  font-bold flex-grow text-center">Kapcsolat</h2>
