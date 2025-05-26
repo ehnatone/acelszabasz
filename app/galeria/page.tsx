@@ -4,7 +4,7 @@ import path from "path";
 
 export default function GalleryPage() {
   const galleryDir = path.join(process.cwd(), "public", "galleria");
-  console.log(galleryDir);
+
   const images = fs.readdirSync(galleryDir).map((file) => `/galleria/${file}`);
   const sortedImages = images.sort(
     (a, b) => parseInt(a.split("-")[0]) - parseInt(b.split("-")[0])

@@ -10,11 +10,11 @@ export default function ChatButton(): JSX.Element {
     // Open chat window
 
     setPopupOpen(!popupOpen);
-    console.log("Chat after click" + popupOpen);
+
   };
 
   return (
-    <div className="absolute bottom-0 text-white m-0 p-4 w-full flex justify-end">
+    <div className="absolute bottom-0 m-0 p-4 w-full flex justify-end">
       {popupOpen && <ContactForm onClose={handleChatClick}></ContactForm>}
 
       {!popupOpen && (

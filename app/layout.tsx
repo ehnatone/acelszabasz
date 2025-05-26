@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,18 @@ export default function RootLayout({
     <html lang="hu">
       <head>
         <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-71MZPGSPWW"
+                strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+                {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-71MZPGSPWW');
+                `}
+        </Script>
+        <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js"
           async
           defer
@@ -64,6 +77,7 @@ export default function RootLayout({
         </main>
         <CookieConsent />
         {/* Footer */}
+        <Analytics />
       </body>
     </html>
   );
