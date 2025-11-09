@@ -1,4 +1,5 @@
 import { JSX } from "react";
+import ContactButton from "./ContactButton";
 
 export default function Hero(): JSX.Element {
   return (
@@ -14,6 +15,7 @@ export default function Hero(): JSX.Element {
           <p className="text-lg m-4">
             Minőség, megbízhatóság és szakértelem egy helyen.
           </p>
+          <ContactButton />
         </div>
       </section>
     </div>
