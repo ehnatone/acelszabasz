@@ -87,20 +87,11 @@ const Header = () => {
             </li>
             <li className="border-b border-white hover:bg-red-900">
               <Link
-                href="/galeria"
-                className="block text-center py-6"
-                onClick={() => setIsOpen(false)}
-              >
-                Galéria
-              </Link>
-            </li>
-            <li className="border-b border-white hover:bg-red-900">
-              <Link
                 href="/galeria-szolgaltatasok"
                 className="block text-center py-6"
                 onClick={() => setIsOpen(false)}
               >
-                Galéria szolgáltatásonként
+                Munkáim
               </Link>
             </li>
             <li className="hover:bg-red-900">
