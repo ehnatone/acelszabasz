@@ -78,7 +78,7 @@ export default function Gallery({ images }: GalleryProps) {
                       className="absolute bottom-2 my-2 right-[calc(50%-4.5rem)] px-6 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition duration-300 w-36 mb-10"
                       onClick={handleShowMoreClick}
                     >
-                      {!loaded ? "Mutass még" : "Elrejtés"}
+                      {!loaded ? "Több" : "Kevesebb"}
                     </button>
                   )
                 }

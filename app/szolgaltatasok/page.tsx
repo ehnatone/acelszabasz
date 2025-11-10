@@ -54,25 +54,31 @@ export default function ServicesPage() {
         </p>
 
         {/* Service Grid */}
-        <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-8 px-4">
+        <div className="grid xl:grid-cols-1 lg:grid-cols-1 grid-cols-1 gap-8 px-4">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition duration-300"
+              className="bg-white shadow-lg rounded-lg p-6 transform hover:scale-100 transition duration-300 text-left"
             >
-              <div className="relative w-full h-40 mb-4">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-md"
-                />
+              <div className="flex flex-col gap-6 md:flex-row md:items-stretch md:gap-8">
+                <div className="relative w-full h-48 overflow-hidden rounded-md md:w-1/3 md:h-auto md:min-h-[12rem]">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-md"
+                  />
+                </div>
+                <div className="flex-1 flex flex-col justify-center space-y-3">
+                  <h3 className="text-2xl font-semibold text-gray-800">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
         </div>

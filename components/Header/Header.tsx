@@ -39,8 +39,11 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/galeria" className="hover:text-blue-300">
-              Galéria
+            <Link
+              href="/galeria-szolgaltatasok"
+              className="hover:text-blue-300"
+            >
+              Munkáim
             </Link>
           </li>
           <li>
@@ -89,6 +92,15 @@ const Header = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Galéria
+              </Link>
+            </li>
+            <li className="border-b border-white hover:bg-red-900">
+              <Link
+                href="/galeria-szolgaltatasok"
+                className="block text-center py-6"
+                onClick={() => setIsOpen(false)}
+              >
+                Galéria szolgáltatásonként
               </Link>
             </li>
             <li className="hover:bg-red-900">
