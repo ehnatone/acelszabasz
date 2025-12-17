@@ -1,4 +1,3 @@
-import GalleryPage from "./galeria/page";
 import ServicesPage from "./szolgaltatasok/page";
 import AboutPage from "./rolam/page";
 import Hero from "@/components/Hero";
@@ -6,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import { Fragment } from "react";
 import Contact from "./kapcsolat/page";
+import ServiceGalleryPage from "./galeria-szolgaltatasok/page";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         <ServicesPage />
       </div>
       <div className="snap-always snap-center">
-        <GalleryPage />
+        <ServiceGalleryPage />
       </div>
       <div className="snap-always snap-center">
         <Contact />
