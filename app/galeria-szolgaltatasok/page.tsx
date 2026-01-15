@@ -9,7 +9,8 @@ const SERVICE_GROUPS: Array<{
   title: ServiceGalleryGroup["title"];
   folders: string[];
 }> = [
-  { key: "kapuk", title: "Úszókapuk", folders: ["kapuk"] },
+  { key: "kovacsolt", title: "Klasszikus kapuk", folders: ["kovacsolt"] },
+  { key: "lemez", title: "Modern kapuk", folders: ["lemez"] },
   { key: "kerites", title: "Kerítések", folders: ["kerites"] },
   { key: "lepcsok", title: "Lépcsők", folders: ["lepcsok"] },
   { key: "korlatok", title: "Korlátok", folders: ["korlatok"] },
@@ -46,7 +47,7 @@ const getImagesForFolders = (folders: string[]): string[] => {
     const files = entries
       .filter((entry) => entry.isFile())
       .map((entry) => entry.name)
-      .sort((a, b) => a.localeCompare(b, "hu", { numeric: true }))
+      .sort((a, b) => a.localeCompare(b, "hu", { numeric: false }))
       .map((file) => `/galleria/${folder}/${file}`);
 
     return acc.concat(files);
